@@ -16,7 +16,7 @@ var _createClass = function () {
             arr2[i] = arr[i];
           } return arr2;
         } else {return Array.from(arr);}
-      }function _classCallCheck(instance, Constructor) {
+      } function _classCallCheck(instance, Constructor) {
         if (!(instance instanceof Constructor)) {
           throw new TypeError("Cannot call a class as a function");
         }
@@ -32,6 +32,10 @@ var ctx = canvas.getContext('2d');
 
 canvas.width = window.innerWidth;
 canvas.height = 550;//window.innerHeight;
+
+ctx.font = '30px Arial';
+ctx.fillText('wassup', canvas.width/2, canvas.height/2);
+
 
 var mouse = {
   x: 0,
