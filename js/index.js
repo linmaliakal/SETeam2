@@ -1,18 +1,53 @@
 function getTweet(){
-  var txt = document.getElementById("field1");
+  var txt = document.getElementById('field1');
   return txt;
 }
 
 var context;
 var text = "";
-var textDirection ="";
+var textDirection = "";
+//var GRAVITY = 0;
 
-$(function() {
-  context = document.getElementById("cvs").getContext("2d");
-  setInterval("animate()", 30);
-  textDirection ="right";
+dragElement(document.getElementById('textbox'));
+//for dragging square with text in it, hoping to implement jelly animations to box despite jelly being on canvas
+function dragElement(element) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(element.id + 'header')) {
+    document.getElementById(element.id + 'header').onmousedown = dragMouseDown;
+  } else {
+    element.onmousedown = dragMouseDown;
+  }
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    document.onmousemove = elementDrag;
+  }
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    element.style.top = (element.offsetTop - pos2) + 'px';
+    element.style.left = (element.offsetLeft - pos1) + 'px';
+  }
+}
+function closeDragElement() {
+  // stop moving when mouse button is released:
+  document.onmouseup = null;
+  document.onmousemove = null;
+}
+
+/* $(function() {
+  context = document.getElementById('cvs').getContext('2d');
+  setInterval('animate()'', 30);
+  textDirection ='right';
   textXpos = 5;
-  text = "#tweet"//document.getElementById("field1");
+  text = '#tweet'//document.getElementById("field1");
 });
 function animate() {
 // Clear screen
@@ -24,23 +59,23 @@ function animate() {
   var metrics = context.measureText(text);
   var textWidth = metrics.width;
 
-  if (textDirection == "right") {
+  if (textDirection == 'right') {
     textXpos += 10;
     if (textXpos > 500 - textWidth) {
-      textDirection = "left";
+      textDirection = 'left';
     }
   }
   else {
     textXpos -= 10;
     if (textXpos < 10) {
-      textDirection = "right";
+      textDirection = 'right';
     }
   }
   context.font = '20px _sans';
   context.fillStyle = '#FF0000';
   context.textBaseline = 'top';
   context.fillText  ( text, textXpos, 180);
-}
+} */
 /* var _ref;
 var _createClass = function () {
   function defineProperties(target, props) {
@@ -266,11 +301,12 @@ Point = function () {
 
 
 Square = function () {
-  function Square(width, height, spacing, hue) {var _this = this;_classCallCheck(this, Square);
+  function Square(width, height, spacing, hue, text) {var _this = this;_classCallCheck(this, Square);
     this.width = width;
     this.height = height;
     this.spacing = spacing;
     this.hue = hue;
+    this.text = text;
 
     var yOff = 200 + Math.random() * (canvas.height - 300 - height * SPACING);
     var xOff = 10 + Math.random() * (canvas.width - 10 - width * SPACING);

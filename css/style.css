@@ -49,6 +49,22 @@ code {
   padding: 0em 0.2em;
 }
 
+#textbox {
+  position: absolute;
+  z-index: 9;
+  background-color: #f1f1f1f1;
+  border: 1px solid #f1f1f1f1;
+  text-align: center;
+}
+
+#textboxheader {
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+  background-color: #00b9ff;
+  color: #fff;
+}
+
 /*#github {
   position: absolute;
   top: 1em;
