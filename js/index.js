@@ -1,4 +1,45 @@
-var _ref;
+var context;
+var text = "";
+var textDirection ="";
+
+$(function() {
+  context = document.getElementById("cvs").getContext("2d");
+  setInterval("animate()", 30);
+  textDirection ="right";
+  textXpos = 5;
+  text = "Animation!";
+});
+        function animate() {
+            // Clear screen
+            context.clearRect(0, 0, 500, 500);
+            context.globalAlpha = 1;
+            context.fillStyle = '#fff';
+            context.fillRect(0, 0, 500, 500);
+
+            var metrics = context.measureText(text);
+            var textWidth = metrics.width;
+
+            if (textDirection == "right") {
+                textXpos += 10;
+
+                if (textXpos > 500 - textWidth) {
+                    textDirection = "left";
+                }
+            }
+            else {
+                textXpos -= 10;
+
+                if (textXpos < 10) {
+                    textDirection = "right";
+                }
+            }
+
+            context.font = '20px _sans';
+            context.fillStyle = '#FF0000';
+            context.textBaseline = 'top';
+            context.fillText  ( text, textXpos, 180);
+          }
+/* var _ref;
 var _createClass = function () {
   function defineProperties(target, props) {
     for (var i = 0; i < props.length; i++) {
@@ -414,7 +455,8 @@ canvas.onmouseup = canvas.ontouchend = function () {
 
 canvas.onmousemove = canvas.ontouchmove = setMouse;
 
-window.onkeydown = function (_ref3) {var keyCode = _ref3.keyCode;
+*/
+/* window.onkeydown = function (_ref3) {var keyCode = _ref3.keyCode;
   if (keyCode === 49) {
     SPEED = 0.2;
   } else if (keyCode === 50) {
@@ -431,4 +473,4 @@ window.onkeyup = function (_ref4) {var keyCode = _ref4.keyCode;
   } else if (keyCode === 51) {
     GRAVITY = 0.05;
   }
-};
+}; */
