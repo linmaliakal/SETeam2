@@ -1,15 +1,108 @@
-function getTweet(){
-  var txt = document.getElementById('field1');
-  return txt;
+/* for movement of text by mouse on canvas */
+var canvas = document.querySelector('canvas');
+var ctx = canvas.getContext('2d');
+
+//variables
+var $canvas = $("#canvas");
+var canvasOffset = $canvas.offset();
+var offsetX = canvasOffset.left;
+var offsetY = canvasOffset.top;
+var scrollX = $canvas.scrollLeft();
+var scrollY = $canvas.scrollTop();
+var startX;
+var startY;
+var texts = [];
+var selectedText = -1;
+
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  for (var i = 0; i < texts.length; i++) {
+    var text = texts[i];
+    ctx.fillText(text.text, text.x, text.y);
+  }
 }
 
-var context;
-var text = "";
-var textDirection = "";
-//var GRAVITY = 0;
+function textHittest(x, y, textIndex) {
+  var text = texts[textIndex];
+  return (x >= text.x && x <= text.x + text.width && y >= text.y - text.height && y <= text.y);
+}
 
-dragElement(document.getElementById('textbox'));
+function handleMouseDown(e) {
+  e.preventDefault();
+  startX = parseInt(e.clientX - offsetX);
+  startY = parseInt(e.clientY - offsetY);
+  // Put your mousedown stuff here
+  for (var i = 0; i < texts.length; i++) {
+    if (textHittest(startX, startY, i)) {
+      selectedText = i;
+    }
+  }
+}
+// done dragging
+function handleMouseUp(e) {
+  e.preventDefault();
+  selectedText = -1;
+}
+// also done dragging
+function handleMouseOut(e) {
+  e.preventDefault();
+  selectedText = -1;
+}
+
+function handleMouseMove(e) {
+    if (selectedText < 0) {
+        return;
+    }
+    e.preventDefault();
+    mouseX = parseInt(e.clientX - offsetX);
+    mouseY = parseInt(e.clientY - offsetY);
+
+    // Put your mousemove stuff here
+    var dx = mouseX - startX;
+    var dy = mouseY - startY;
+    startX = mouseX;
+    startY = mouseY;
+
+    var text = texts[selectedText];
+    text.x += dx;
+    text.y += dy;
+    draw();
+}
+// listen for mouse events
+$("#canvas").mousedown(function (e) {
+    handleMouseDown(e);
+});
+$("#canvas").mousemove(function (e) {
+    handleMouseMove(e);
+});
+$("#canvas").mouseup(function (e) {
+    handleMouseUp(e);
+});
+$("#canvas").mouseout(function (e) {
+    handleMouseOut(e);
+});
+
+$('#drawText').click(function () {
+  //will calculate the y coordinate for this text on the canvas
+  var y = texts.length * 20 + 20;
+  //get the text from input
+  var text = {
+    text: $('#field1').val(),
+    x: 20,
+    y: y
+  };
+  //calculate the size of text for hit-testing purposes
+  ctx.font = '16px verdana';
+  text.width = ctx.measureText(text.text).width;
+  text.height = 16;
+  //pushes new text into texts array
+  texts.push(text);
+  //redraws everything
+  draw();
+});
+
 //for dragging square with text in it, hoping to implement jelly animations to box despite jelly being on canvas
+dragElement(document.getElementById('textbox'));
 function dragElement(element) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
   if (document.getElementById(element.id + 'header')) {
@@ -42,12 +135,17 @@ function closeDragElement() {
   document.onmousemove = null;
 }
 
-/* $(function() {
+//moving text across the canvas screen
+/* ----------------------------------------------------------
+var context;
+var text = "";
+var textDirection ="";
+ $(function() {
   context = document.getElementById('cvs').getContext('2d');
-  setInterval('animate()'', 30);
+  setInterval('animate()', 30);
   textDirection ='right';
   textXpos = 5;
-  text = '#tweet'//document.getElementById("field1");
+  text = "#tweet"//document.getElementById("field1");
 });
 function animate() {
 // Clear screen
@@ -59,24 +157,28 @@ function animate() {
   var metrics = context.measureText(text);
   var textWidth = metrics.width;
 
-  if (textDirection == 'right') {
+  if (textDirection == "right") {
     textXpos += 10;
     if (textXpos > 500 - textWidth) {
-      textDirection = 'left';
+      textDirection = "left";
     }
   }
   else {
     textXpos -= 10;
     if (textXpos < 10) {
-      textDirection = 'right';
+      textDirection = "right";
     }
   }
   context.font = '20px _sans';
   context.fillStyle = '#FF0000';
   context.textBaseline = 'top';
   context.fillText  ( text, textXpos, 180);
-} */
-/* var _ref;
+}
+---------------------------------------------------------- */
+
+
+/* the jelly blocks ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+var _ref;
 var _createClass = function () {
   function defineProperties(target, props) {
     for (var i = 0; i < props.length; i++) {
@@ -511,4 +613,5 @@ window.onkeyup = function (_ref4) {var keyCode = _ref4.keyCode;
   } else if (keyCode === 51) {
     GRAVITY = 0.05;
   }
-}; */
+};
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
