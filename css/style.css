@@ -18,7 +18,35 @@
   height: 200px;
   position: center;
 }
-
+.flexcontainer{
+  display: flex;
+  align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+}
+section {
+  display: -webkit-flex;
+  display: flex;
+}
+urlsArea {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #ccc;
+  padding: 20px;
+}
+mentionsArea {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #ccc;
+  padding: 20px;
+}
+topicsArea {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #ccc;
+  padding: 20px;
+}
 .center {
   margin: 0;
   position: relative;
