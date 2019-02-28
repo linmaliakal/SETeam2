@@ -100,6 +100,24 @@ $('#drawText').click(function () {
   //redraws everything
   draw();
 });
+$('#drawplaceholder').click(function () {
+  //will calculate the y coordinate for this text on the canvas
+  var y = texts.length * 20 + 20;
+  //get the text from input
+  var text = { 
+    text: 'helo',
+    x: 20,
+    y: y
+  };
+  //calculate the size of text for hit-testing purposes
+  ctx.font = '16px verdana';
+  text.width = ctx.measureText(text.text).width;
+  text.height = 16;
+  //pushes new text into texts array
+  texts.push(text);
+  //redraws everything
+  draw();
+});
 
 //for dragging square with text in it, hoping to implement jelly animations to box despite jelly being on canvas
 dragElement(document.getElementById('textbox'));

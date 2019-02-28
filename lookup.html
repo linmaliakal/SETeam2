@@ -7,9 +7,8 @@
     <title>LookUp Jello Page</title>
   </head>
   <body>
-    <div class="container">
-      <div class="center">
-    <div><span class="rainbow">Jello</span></div>
+      <div class="content">
+  <div><span class="rainbow">Jello</span></div>
     <div class="dropdown">
       <button onclick="dropbtnfunction()" class="dropbtn">Navigation</button>
       <div id="myDropdown" class="dropdown-content">
@@ -19,9 +18,11 @@
       </div>
     </div>
     <br><br>
-    <button onclick="getTweet()"class="button">Make tweet Jello</button>
-    </div>
-    </div>
+    <button id='drawplaceholder' type="button" class="button">Add to Jello!</button>
+  <div id='textbox' class = center>
+<br>
+  <canvas id='canvas' width=500% height=400 style="border: 1px solid black;"></canvas>  </div>
+</div>
 
 </body>
 <script src="js/tweetPermissions.js"></script>

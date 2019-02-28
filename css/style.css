@@ -1,20 +1,32 @@
-/*p {
+p {
   border: 1px solid powderblue;
   padding: 15px;
-  align-items: center;
-  text-align: center;
   font-family: 'Futura', sans-serif;
-}*/
+}
 .textarea{
   width:300px;
   height:100px;
   position: absolute;
 }
+/*.flex-container{
+  display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+ }*/
+ .content {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   text-align: center;
+  max-width: 500px;
+  margin: auto;
+}
 /*.flex-container {
   display: flex;
   align-items: stretch;
 }*/
-.container {
+/*.container {
   height: 200px;
   position: center;
 }
@@ -26,57 +38,65 @@ section {
   display: -webkit-flex;
   display: flex;
 }
-urlsArea {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  background: #ccc;
-  padding: 20px;
+*/
+/*@import "compass/css3";
+
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
 }
-mentionsArea {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  background: #ccc;
-  padding: 20px;
-}
-topicsArea {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  background: #ccc;
-  padding: 20px;
-}
-.center {
+
+.flex-item {
+  background: #00b9ff;
+  padding: 5px;
+  width: 200px;
+  height: 150px;
+  margin-top: 10px;
+
+  line-height: 150px;
+  color: white;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+}*/
+/*.center {
   margin: 0;
   position: relative;
   top: 100%;
   left: 100%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-}
-h1{
-  color: #00b9ff;
-}
-body {
+}*/
+
+/*body {
   width: 50%;
   font-family: 'Futura', sans-serif;
   background: #f8f8f8;
   align-items: center;
   text-align: center;
   padding: 5px;
-}
+}*/
 
 button{
   background-color: #00b9ff;
   margin: 0 auto;
   border: none;
   color: white;
-  width: 80%;
   font-size: 16px;
   padding: 15px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   text-align: center;
 }
@@ -120,6 +140,10 @@ button{
 .dropdown {
   position: relative;
   display: inline-block;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -130,6 +154,7 @@ button{
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px #420039;
   z-index: 1;
+
 }
 
 /* Links inside the dropdown */
