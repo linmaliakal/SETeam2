@@ -1,5 +1,5 @@
 /* for movement of text by mouse on canvas */
-var canvas = document.querySelector('canvas');
+var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 
 //variables
@@ -177,7 +177,7 @@ function animate() {
 ---------------------------------------------------------- */
 
 
-/* the jelly blocks ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/* the jelly blocks ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 var _ref;
 var _createClass = function () {
   function defineProperties(target, props) {
@@ -594,8 +594,8 @@ canvas.onmouseup = canvas.ontouchend = function () {
 };
 
 canvas.onmousemove = canvas.ontouchmove = setMouse;
-
 */
+
 /* window.onkeydown = function (_ref3) {var keyCode = _ref3.keyCode;
   if (keyCode === 49) {
     SPEED = 0.2;

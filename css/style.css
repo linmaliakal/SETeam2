@@ -1,8 +1,5 @@
 * {
-  margin-top: 3px;
-  margin-left: 0;
-  margin-right: 0;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 body {
@@ -28,6 +25,7 @@ button {
 }
 
 h1 {
+  margin-top: 10px;
   color: #00b9ff;
 }
 
@@ -70,8 +68,8 @@ code {
 #textbox {
   position: absolute;
   z-index: 9;
-  background-color: #f1f1f1f1;
-  border: 1px solid #f1f1f1f1;
+  background-color: #f1f1f1;
+  border: 1px solid #f1f1f1;
   text-align: center;
 }
 
@@ -82,25 +80,6 @@ code {
   background-color: #00b9ff;
   color: #fff;
 }
-
-/*#github {
-  position: absolute;
-  top: 1em;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 20em;
-  text-align: center;
-  font-size: 18px;
-  color: #888;
-}
-
-#github a {
-  text-decoration: none;
-  color: #9999EE;
-  margin-bottom: 0.2em;
-  display: inline-block;
-} */
 
 @keyframes fadeOut {
   from {
