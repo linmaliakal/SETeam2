@@ -10,6 +10,7 @@ This web application was developed in the scope of deciphering the components of
 * [PhysicsJS API](http://wellcaffeinated.net/PhysicsJS/docs/) <br/>
 * [Color Schemes](https://coolors.co/220c10-506c64-77cbb9-75b8c8-cdd3d5) <br/>
 * [Bridge Pattern](https://www.geeksforgeeks.org/bridge-design-pattern/) <br/>
+* [Font Selection](https://inkbotdesign.com/font-combinations/)<br/>
 
 ## Operating Environment
 This web application makes use of Twitter's searching API and a Physics API for gravity implementation. On the back-end, Scala is being used to obtain past tweet information. We created a developer Twitter account to aide in the process of using the API. The testing for JavaScript can be found in the spec folder, done through Jasmine. <br/>
