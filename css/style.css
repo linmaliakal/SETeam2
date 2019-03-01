@@ -173,13 +173,28 @@ button{
   text-align: center;
 }
 
-button[type=submit] {
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px transparent grey;
+  float: left;
+  width: 68%;
+  background: white;
+}
+
+form.example button {
+  float: right;
+  width: 20%;
+  padding: 11px;
+  background: #2196F3;
   color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
+  font-size: 14px;
+  border: 1px transparent grey;
   cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
 }
 
 .rainbow {
