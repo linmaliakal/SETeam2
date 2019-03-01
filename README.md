@@ -12,7 +12,7 @@ This web application was developed in the scope of deciphering the components of
 * [Bridge Pattern](https://www.geeksforgeeks.org/bridge-design-pattern/) <br/>
 
 ## Operating Environment
-This web application makes use of Twitter's searching API and a Physics API for gravity implementation. On the back-end, Scala is being used to obtain past tweet information. We created a developer Twitter account to aide in the process of using the API. <br/>
+This web application makes use of Twitter's searching API and a Physics API for gravity implementation. On the back-end, Scala is being used to obtain past tweet information. We created a developer Twitter account to aide in the process of using the API. The testing for JavaScript can be found in the spec folder, done through Jasmine. <br/>
 ## Design Pattern
 We determined and decided to use the Bridge Pattern in order to make use of the Scala language and work done by one group and the JavaScript of the other. By using the Bridge pattern, we were able to develop separately in terms of the abstraction and actual implementation onto the site of returning tweet information on the canvas.
 ## Requirements
