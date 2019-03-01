@@ -1,7 +1,11 @@
+body {
+  background-color: #F1F6FA;
+}
 p {
   border: 1px solid powderblue;
+  background-color: white;
   padding: 15px;
-  font-family: 'Futura', sans-serif;
+  font-family: 'Quicksand', sans-serif;
 }
 .textarea{
   width:300px;
@@ -157,6 +161,7 @@ section {
 
 button{
   background-color: #00b9ff;
+  font-family: 'Quicksand', sans-serif;
   margin: 0 auto;
   border: none;
   color: white;
@@ -172,7 +177,7 @@ button{
   background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
   color:transparent;
   font-size: 70px;
-  font-family: 'Futura', sans-serif;
+  font-family: 'Pacifico', sans-serif;
   -webkit-background-clip: text;
   background-clip: text;
 }
@@ -181,7 +186,7 @@ button{
   background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
   color:transparent;
   font-size: 20px;
-  font-family: 'Futura', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   -webkit-background-clip: text;
   background-clip: text;
 }
@@ -191,7 +196,7 @@ button{
   color: white;
   padding: 16px;
   font-size: 16px;
-  font-family: 'Futura', sans-serif;;
+  font-family: 'Quicksand', sans-serif;
   border: none;
   cursor: pointer;
 }
@@ -217,6 +222,7 @@ button{
 .dropdown-content {
   display: none;
   position: absolute;
+  font-family: 'Quicksand', sans-serif;;
   background-color: #00b9ff;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px #420039;
