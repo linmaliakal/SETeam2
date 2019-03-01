@@ -1,12 +1,9 @@
 Physics(function(world){
   // bounds of the window
-  var viewportBounds = Physics.aabb(0, 0, window.innerWidth, window.innerHeight)
-      ,edgeBounce
-      ,renderer
-      ;
+  var viewportBounds = Physics.aabb(0, 0, window.innerWidth, window.innerHeight),edgeBounce,renderer;
 
   // create a renderer
-  renderer = Physics.renderer('canvas', {
+  renderer = Physics.renderer('canvas',{
       el: 'viewport'
   });
 
@@ -41,8 +38,8 @@ Physics(function(world){
       ,vx: 0.3
       ,radius: 80
       ,styles: {
-          fillStyle: '#cb4b16'
-          ,angleIndicator: '#72240d'
+          fillStyle: '#77CBB9'
+          ,angleIndicator: '#77CBB9'
       }
   }));
 
@@ -52,8 +49,19 @@ Physics(function(world){
       ,vx: -0.3
       ,radius: 40
       ,styles: {
-          fillStyle: '#6c71c4'
-          ,angleIndicator: '#3b3e6b'
+          fillStyle: '#75B8C8'
+          ,angleIndicator: '#75B8C8'
+      }
+  }));
+
+  world.add( Physics.body('circle', {
+      x: renderer.width * 0.2
+      ,y: renderer.height * 0.3
+      ,vx: -0.3
+      ,radius: 60
+      ,styles: {
+          fillStyle: '#506C64'
+          ,angleIndicator: '#506C64'
       }
   }));
 
@@ -92,7 +100,7 @@ Physics(function(world){
 });
 
 /* for movement of text by mouse on canvas */
-/*var canvas = document.getElementById('canvas');
+var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 
 //variables
@@ -195,7 +203,7 @@ $('#drawText').click(function () {
 });
 
 //for dragging square with text in it, hoping to implement jelly animations to box despite jelly being on canvas
-dragElement(document.getElementById('textbox'));
+/* dragElement(document.getElementById('textbox'));
 function dragElement(element) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
   if (document.getElementById(element.id + 'header')) {

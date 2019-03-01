@@ -30,7 +30,22 @@ Manually enter your tweet here to test it!
     <button id='drawText' type="button" class="button">Add to Jello!</button>
   <div id='textbox' class = center>
 <br>
-  <canvas id='canvas' width=500% height=400 style="border: 1px solid black;"></canvas>  </div>
+  <canvas id='canvas' width=500% height=400 style="border: 1px solid black;">
+    <script>
+    Physics(function(world){
+      var renderer = Physics.renderer('canvas', {
+        el: 'element-id',
+        width: 500,
+        height: 300,
+      });
+      world.add(renderer);
+      var gravity = Physics.behavior('constant-acceleration', {
+        acc: { x : 0, y: 0.0004 } // this is the default
+      });
+      world.add( gravity );
+    })
+    </script>
+  </canvas>  </div>
 </div>
   </body>
 <script type="text/javascript" src="js/index.js"></script>
