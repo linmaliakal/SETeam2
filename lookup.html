@@ -2,13 +2,15 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Quicksand:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="Jas.js"></script>
     <script src="JasSpec.js"></script>
     <title>LookUp Jello Page</title>
   </head>
   <body>
       <div class="content">
-  <div><span class="rainbow">Jello</span></div>
+  <div class="jellybounce"><span class="rainbow">Jello</span></div>
     <div class="dropdown">
       <button onclick="dropbtnfunction()" class="dropbtn">Navigation</button>
       <div id="myDropdown" class="dropdown-content">
@@ -17,14 +19,22 @@
         <a href="manual.html">Manual Entry</a>
       </div>
     </div>
-    <br><br>
-    <button id='drawplaceholder' type="button" class="button">Add to Jello!</button>
-  <div id='textbox' class = center>
+    <p>Look up a keyword here, and we will give you the most common words in the past 100 tweets with that keyword in them </p>
+    <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
+      <input type="text" placeholder="Search keyword.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+    <br>
+    <button id='drawText' type="button" class="button">Add to Jello!</button>
+    <!-- Where the json printout is going -->
+    <!-- MIKEY LOOK HERE -->
+    <div><div id="mydiv">
+      <div id="mydivheader">Move me Around!</div>
+      <p id="tweetElement"></p>
+    </div></div>
 <br>
-  <canvas id='canvas' width=500% height=400 style="border: 1px solid black;"></canvas>  </div>
-</div>
-
 </body>
+<script type="text/javascript" src="js/lookup.js"></script>
 <script src="js/tweetPermissions.js"></script>
 <script src="spec/tweetPermissionsSpec.js"></script>
 </html>
