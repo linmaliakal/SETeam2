@@ -3,8 +3,8 @@ Physics(function(world){
   var viewportBounds = Physics.aabb(0, 0, window.innerWidth, window.innerHeight),edgeBounce,renderer;
 
   // create a renderer
-  renderer = Physics.renderer('canvas',{
-      el: 'canvas'
+  renderer = Physics.renderer('canvas', {
+      el: 'viewport'
   });
 
   // add the renderer
@@ -203,7 +203,7 @@ $('#drawText').click(function () {
 });
 
 //for dragging square with text in it, hoping to implement jelly animations to box despite jelly being on canvas
-/* dragElement(document.getElementById('textbox'));
+/*dragElement(document.getElementById('textbox'));
 function dragElement(element) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
   if (document.getElementById(element.id + 'header')) {
