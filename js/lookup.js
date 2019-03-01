@@ -46,6 +46,7 @@ function getKeys(obj, val) {
 //temporary json file for testing, will be json file obtained from backend server
 var json = '{"glossary":{"title":"example glossary","GlossDiv":{"title":"S","GlossList":{"GlossEntry":{"ID":"SGML","SortAs":"SGML","GlossTerm":"Standard Generalized Markup Language","Acronym":"SGML","Abbrev":"ISO 8879:1986","GlossDef":{"para":"A meta-markup language, used to create markup languages such as DocBook.","ID":"44","str":"SGML","GlossSeeAlso":["GML","XML"]},"GlossSee":"markup"}}}}}';
 var js = JSON.parse(json);
+document.getElementById("tweetElement").innerHTML = myObj.name;
 
 console.log(getObjects(js,'ID',''));
 //returns 2 objects since keys with name ID are found in 2 objects

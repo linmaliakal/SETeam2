@@ -3,6 +3,7 @@
   <head>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Pacifico|Quicksand:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="Jas.js"></script>
     <script src="JasSpec.js"></script>
     <title>LookUp Jello Page</title>
@@ -18,7 +19,13 @@
         <a href="manual.html">Manual Entry</a>
       </div>
     </div>
-    <br><br>
+    <p>Look up a keyword here, and we will give you the most common words in the past 100 tweets with that keyword in them </p>
+    <div class="search-container">
+    <form action="/action_page.php">
+      <input type="text" placeholder="Search keyword.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
     <button id='drawplaceholder' type="button" class="button">Add to Jello!</button>
   <div id='textbox' class = center>
 <br>
