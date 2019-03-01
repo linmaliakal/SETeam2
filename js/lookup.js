@@ -56,7 +56,7 @@ console.log(getKeys(js,'SGML'));
 //returns array ["ID", "SortAs", "Acronym", "str"]
 
 /* for movement of text by mouse on canvas */
-var canvas = document.getElementById('canvas');
+/*var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 
 //variables
@@ -157,7 +157,7 @@ $('#drawText').click(function () {
   //redraws everything
   draw();
 });
-
+*/
 //Make the DIV element draggagle:
 dragElement(document.getElementById("mydiv"));
 
