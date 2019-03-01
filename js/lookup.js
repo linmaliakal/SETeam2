@@ -44,9 +44,9 @@ function getKeys(obj, val) {
     return objects;
 }
 //temporary json file for testing, will be json file obtained from backend server
-var json = '{"glossary":{"title":"example glossary","GlossDiv":{"title":"S","GlossList":{"GlossEntry":{"ID":"SGML","SortAs":"SGML","GlossTerm":"Standard Generalized Markup Language","Acronym":"SGML","Abbrev":"ISO 8879:1986","GlossDef":{"para":"A meta-markup language, used to create markup languages such as DocBook.","ID":"44","str":"SGML","GlossSeeAlso":["GML","XML"]},"GlossSee":"markup"}}}}}';
+var json = '{"name":"Linette", "age":31, "city":"Chicago"}'; //'{"glossary":{"title":"example glossary","GlossDiv":{"title":"S","GlossList":{"GlossEntry":{"ID":"SGML","SortAs":"SGML","GlossTerm":"Standard Generalized Markup Language","Acronym":"SGML","Abbrev":"ISO 8879:1986","GlossDef":{"para":"A meta-markup language, used to create markup languages such as DocBook.","ID":"44","str":"SGML","GlossSeeAlso":["GML","XML"]},"GlossSee":"markup"}}}}}';
 var js = JSON.parse(json);
-document.getElementById("tweetElement").innerHTML = myObj.name;
+document.getElementById("tweetElement").innerHTML = js.city;
 
 console.log(getObjects(js,'ID',''));
 //returns 2 objects since keys with name ID are found in 2 objects
@@ -144,7 +144,7 @@ $('#drawText').click(function () {
   var y = texts.length * 20 + 20;
   //get the text from input
   var text = {
-    text: $('#field1').val(), //field1 must be value parsed from json file
+    text: $('#tweetElement').val(), //tweetElement is obtained parsed json file
     x: 20,
     y: y
   };
@@ -157,3 +157,36 @@ $('#drawText').click(function () {
   //redraws everything
   draw();
 });
+
+dragElement(document.getElementById('mydiv'));
+function dragElement(element) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(element.id + 'header')) {
+    document.getElementById(element.id + 'header').onmousedown = dragMouseDown;
+  } else {
+    element.onmousedown = dragMouseDown;
+  }
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    document.onmousemove = elementDrag;
+  }
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    element.style.top = (element.offsetTop - pos2) + 'px';
+    element.style.left = (element.offsetLeft - pos1) + 'px';
+  }
+}
+function closeDragElement() {
+  // stop moving when mouse button is released:
+  document.onmouseup = null;
+  document.onmousemove = null;
+}
