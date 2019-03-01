@@ -4,12 +4,11 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="Jas.js"></script>
     <script src="JasSpec.js"></script>
-    <title>Main Jello Page</title>
+    <title>LookUp Jello Page</title>
   </head>
   <body>
       <div class="content">
-    <div><span class="rainbow">Jello</span></div>
-    <p>Welcome to Jello! Jello is an interactive Tweet Parser. <br> You can interact with either your own tweet or a tweet from the past 7 days. <br>Navigate to the appropriate page with the dropdown below, and have fun!</p>
+  <div><span class="rainbow">Jello</span></div>
     <div class="dropdown">
       <button onclick="dropbtnfunction()" class="dropbtn">Navigation</button>
       <div id="myDropdown" class="dropdown-content">
@@ -18,9 +17,14 @@
         <a href="manual.html">Manual Entry</a>
       </div>
     </div>
-    </div>
+    <br><br>
+    <button id='drawplaceholder' type="button" class="button">Add to Jello!</button>
+  <div id='textbox' class = center>
+<br>
+  <canvas id='canvas' width=500% height=400 style="border: 1px solid black;"></canvas>  </div>
+</div>
+
 </body>
-<script src="js/tweetPermissions.js"></script>
 <script src="js/tweetPermissions.js"></script>
 <script src="spec/tweetPermissionsSpec.js"></script>
 </html>

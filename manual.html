@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="Jas.js"></script>
+    <script src="JasSpec.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <title>Tweet Page</title>
+  </head>
+  <body>
+<!--    Enter your tweet here! <input type ="text" id="field1">-->
+<!--This line makes the text input area resizable -->
+<div class="content">
+  <div><span class="rainbow">Jello</span></div>
+<div class="dropdown">
+  <button onclick="dropbtnfunction()" class="dropbtn">Navigation</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="index.html">Home</a>
+    <a href="lookup.html">Existing-Tweet LookUp</a>
+    <a href="manual.html">Manual Entry</a>
+  </div>
+</div>
+<br><br>
+<textarea rows="4" cols="50" id="field1">
+Manually enter your tweet here to test it!
+</textarea>
+    <br>
+<!--  <button onclick="getTweet()"class="button">Make tweet Jello</button>-->
+    <button id='drawText' type="button" class="button">Add to Jello!</button>
+  <div id='textbox' class = center>
+<br>
+  <canvas id='canvas' width=500% height=400 style="border: 1px solid black;"></canvas>  </div>
+</div>
+  </body>
+<script type="text/javascript" src="js/index.js"></script>
+  <script src="js/tweetPermissions.js"></script>
+  <script src="spec/tweetPermissionsSpec.js"></script>
+</html>
