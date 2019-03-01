@@ -4,7 +4,7 @@ Physics(function(world){
 
   // create a renderer
   renderer = Physics.renderer('canvas',{
-      el: 'viewport'
+      el: 'canvas'
   });
 
   // add the renderer

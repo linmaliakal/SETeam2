@@ -31,20 +31,46 @@ Manually enter your tweet here to test it!
   <div id='textbox' class = center>
 <br>
   <canvas id='canvas' width=500% height=400 style="border: 1px solid black;">
-    <script>
+    <!--<script>
     Physics(function(world){
+      var canvasWidth = 100%;
+      var canvasHeight = 100%;
       var renderer = Physics.renderer('canvas', {
-        el: 'element-id',
-        width: 500,
-        height: 300,
+        el: 'canvas',
+        width: canvasWidth,
+        height: canvasHeight,
       });
       world.add(renderer);
-      var gravity = Physics.behavior('constant-acceleration', {
-        acc: { x : 0, y: 0.0004 } // this is the default
+      world.on('step', function(){
+        world.render();
       });
-      world.add( gravity );
-    })
-    </script>
+      var canvasBounds = Physics.aabb(0, 0, canvasWidth, canvasHeight);
+      // constrain objects to these bounds
+      world.add(Physics.behavior('edge-collision-detection', {
+        aabb: viewportBounds,
+        restitution: 0.99,
+        cof: 0.99
+      }));
+      world.add(
+        Physics.body('circle', {
+          x: 50, // x-coordinate
+          y: 30, // y-coordinate
+          vx: 0.2, // velocity in x-direction
+          vy: 0.01, // velocity in y-direction
+          radius: 20
+        })
+      );
+      //adds bouncing feature of objects
+      world.add( Physics.behavior('body-impulse-response') );
+      //adds gravity
+      world.add( Physics.behavior('constant-acceleration') );
+      Physics.util.ticker.on(function( time, dt ){
+        world.step( time );
+      });
+      //starts ticker
+      Physics.util.ticker.start();
+    });
+  </script>-->
   </canvas>  </div>
 </div>
   </body>
