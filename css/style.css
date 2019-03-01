@@ -1,12 +1,12 @@
 body {
   background-color: #F1F6FA;
 }
-/*p {
+p {
   border: 1px solid powderblue;
   background-color: white;
   padding: 15px;
   font-family: 'Quicksand', sans-serif;
-}*/
+}
 .textarea{
   width:300px;
   height:100px;
