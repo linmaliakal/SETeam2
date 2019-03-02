@@ -58,8 +58,11 @@ console.log(getKeys(js,'SGML'));
 //Make the DIV element draggagle:
 dragElement(document.getElementById("mydiv"));
 
+function lookUpText() {
+    document.getElementById("great").innerHTML = document.getElementById("lookUpButton").value;
+  }
 function manualText() {
-    document.getElementById("textBox").innerHTML = document.getElementById("field1").value;
+    document.getElementById("textBox").innerHTML = document.getElementById("example").value;
   }
 
 function dragElement(elmnt) {
@@ -100,5 +103,12 @@ function dragElement(elmnt) {
     /* stop moving when mouse button is released:*/
     document.onmouseup = null;
     document.onmousemove = null;
+  }
+  const Http = new XMLHttpRequest();
+  const url='https://jsonplaceholder.typicode.com/posts';
+  Http.open("GET", url);
+  Http.send();
+  Http.onreadystatechange=(e)=>{
+  console.log(Http.responseText)
   }
 }
