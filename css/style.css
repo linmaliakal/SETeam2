@@ -27,6 +27,12 @@ p {
   z-index: 10;
   background-color: #2196F3;
   color: #fff;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.outputTweet {
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 /* adds bouncing jelly movement to at button */
