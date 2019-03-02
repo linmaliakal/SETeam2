@@ -74,6 +74,15 @@ function manualText() {
   console.log(Http.responseText)
 }*/
 
+/* here's where I'm working, Linette!!
+
+/*function lookUpSearch(){
+  const Http = new XMLHttpRequest();
+  Http.open("GET", "http://localhost:9000/"" + document.getElementById("searchTerm"));
+  Http.send();
+  Http.onreadystatechange=(e)=>{
+  console.log(Http.responseText)
+}*/
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
