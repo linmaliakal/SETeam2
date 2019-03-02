@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<title>XMLHttpRequest</title>
+<body>
+<h2 id="title">XMLHttpRequest - dcode</h2>
+</body>
+
+<script type="text/javascript">
+const xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function (){
+if (xhr.readyState == 4){
+  if(xhr.status == 200){
+    console.log(xhr.responseText);
+  }
+  if (xhr.status == 404){
+    console.log('File or resource not found');
+  }
+}
+};
+xhr.open('Origin', '147.126.10.153:9000/okay', true)
+xhr.send();
+</script>

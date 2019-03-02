@@ -62,7 +62,7 @@ function lookUpText() {
     document.getElementById("great").innerHTML = document.getElementById("lookUpButton").value;
   }
 function manualText() {
-    document.getElementById("textBox").innerHTML = document.getElementById("example").value;
+    document.getElementById("textBox").innerHTML = Http.responseText;
   }
 
 function dragElement(elmnt) {
@@ -104,11 +104,12 @@ function dragElement(elmnt) {
     document.onmouseup = null;
     document.onmousemove = null;
   }
-  const Http = new XMLHttpRequest();
-  const url='https://jsonplaceholder.typicode.com/posts';
-  Http.open("GET", url);
-  Http.send();
-  Http.onreadystatechange=(e)=>{
-  console.log(Http.responseText)
-  }
+
+}
+const Http = new XMLHttpRequest();
+const url='https://jsonplaceholder.typicode.com/posts';
+Http.open("GET", url);
+Http.send();
+Http.onreadystatechange=(e)=>{
+console.log(Http.responseText)
 }
