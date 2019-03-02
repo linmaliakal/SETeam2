@@ -62,7 +62,7 @@ function lookUpText() {
     document.getElementById("great").innerHTML = document.getElementById("lookUpButton").value;
   }
 function manualText() {
-    document.getElementById("textBox").innerHTML = Http.responseText;
+    document.getElementById("textBox").innerHTML = document.getElementById("field1").value;
   }
 
 function dragElement(elmnt) {
@@ -107,8 +107,9 @@ function dragElement(elmnt) {
 
 }
 const Http = new XMLHttpRequest();
-const url='https://jsonplaceholder.typicode.com/posts';
-Http.open("GET", url);
+const url='http://localhost:9000/hello';
+const proxyurl = "https://cors-anywhere.herokuapp.com/";
+Http.open("GET", proxyurl+url);
 Http.send();
 Http.onreadystatechange=(e)=>{
 console.log(Http.responseText)
