@@ -12,9 +12,6 @@
   <body>
 <!--    Enter your tweet here! <input type ="text" id="field1">-->
 <!--This line makes the text input area resizable -->
-<body>
-<!--    Enter your tweet here! <input type ="text" id="field1">-->
-<!--This line makes the text input area resizable -->
 <div class="content">
   <div class="jellybounce"><span class="rainbow">Jello</span></div>
 <div class="dropdown">
@@ -25,20 +22,19 @@
     <a href="manual.html">Manual Entry</a>
   </div>
 </div>
-<br><br>
+<br>
 <textarea placeholder="Enter a tweet here to test it!" style="font-size:13px; background-color: white;" rows="4" cols="50" id="field1">
 </textarea>
     <br>
 <!--  <button onclick="getTweet()"class="button">Make tweet Jello</button>-->
-    <button onclick="manualText()" type="button" class="button">Add to Jello!</button>
-  <div class = center>
-    <div id="mydiv">
-      <div id="mydivheader">Move me Around!</div>
-      <p id="textBox"> change me pls</p>
-    </div>
+    <button id='drawText' type="button" class="button">Add to Jello!</button>
+  <div id='textbox' class = center>
+<br>
+  <canvas id='canvas' width=500% height=400 style="border: 1px solid black; background-color: white;"></canvas></div>
+
 </div>
   </body>
-<script type="text/javascript" src="js/lookup.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
   <script src="js/tweetPermissions.js"></script>
   <script src="spec/tweetPermissionsSpec.js"></script>
 </html>

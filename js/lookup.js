@@ -61,9 +61,16 @@ dragElement(document.getElementById("mydiv"));
 function lookUpText() {
     document.getElementById("great").innerHTML = document.getElementById("lookUpButton").value;
   }
-function manualText() {
-    document.getElementById("textBox").innerHTML = document.getElementById("field1").value;
-  }
+  var json = '{"mostoften":"Followers","second":"Retweets","third":"incident"}';
+//  var json = '{"name":"Linette", "age":31, "city":"Chicago"}'; //'{"glossary":{"title":"example glossary","GlossDiv":{"title":"S","GlossList":{"GlossEntry":{"ID":"SGML","SortAs":"SGML","GlossTerm":"Standard Generalized Markup Language","Acronym":"SGML","Abbrev":"ISO 8879:1986","GlossDef":{"para":"A meta-markup language, used to create markup languages such as DocBook.","ID":"44","str":"SGML","GlossSeeAlso":["GML","XML"]},"GlossSee":"markup"}}}}}';
+  var js = JSON.parse(json);
+  document.getElementById("tweetElement").innerHTML = js.mostoften;
+
+  console.log(getObjects(js,'ID',''));
+  //returns 2 objects since keys with name ID are found in 2 objects
+
+  //grabbing keys through searching values in JSON
+  console.log(getKeys(js,'SGML'));
   /*
   const Http = new XMLHttpRequest();
   const url='http://localhost:9000/hello';
@@ -74,15 +81,9 @@ function manualText() {
   console.log(Http.responseText)
 }*/
 
-/* here's where I'm working, Linette!!
 
-/*function lookUpSearch(){
-  const Http = new XMLHttpRequest();
-  Http.open("GET", "http://localhost:9000/"" + document.getElementById("searchTerm"));
-  Http.send();
-  Http.onreadystatechange=(e)=>{
-  console.log(Http.responseText)
-}*/
+
+
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
