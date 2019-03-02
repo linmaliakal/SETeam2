@@ -64,6 +64,16 @@ function lookUpText() {
 function manualText() {
     document.getElementById("textBox").innerHTML = document.getElementById("field1").value;
   }
+  /*
+  const Http = new XMLHttpRequest();
+  const url='http://localhost:9000/hello';
+  const proxyurl = "https://cors-anywhere.herokuapp.com/";
+  Http.open("GET", proxyurl+url);
+  Http.send();
+  Http.onreadystatechange=(e)=>{
+  console.log(Http.responseText)
+}*/
+
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -105,12 +115,4 @@ function dragElement(elmnt) {
     document.onmousemove = null;
   }
 
-}
-const Http = new XMLHttpRequest();
-const url='http://localhost:9000/hello';
-const proxyurl = "https://cors-anywhere.herokuapp.com/";
-Http.open("GET", proxyurl+url);
-Http.send();
-Http.onreadystatechange=(e)=>{
-console.log(Http.responseText)
 }

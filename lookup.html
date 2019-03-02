@@ -20,13 +20,12 @@
       </div>
     </div>
     <p>Look up a keyword here, and we will give you the most common words in the past 100 tweets with that keyword in them </p>
-    <form class="example" action="localhost:9000/okay" style="margin:auto;max-width:300px">
-      <input type="text" placeholder="Search keyword.." name="search">
+    <form class="example" action=lookUpSearch() style="margin:auto;max-width:300px">
+      <input id = "searchTerm" type="text" placeholder="Search keyword.." name="search">
       <button type="submit"><i class="fa fa-search"></i></button>
     </form>
-    <p id ="great">testing look up</p>
     <br>
-    <button onclick='lookUpText()' type="button" class="button">Add to Jello!</button>
+    <button id='drawText' type="button" class="button">Add to Jello!</button>
     <div><div id="mydiv">
       <div id="mydivheader">Move me Around!</div>
       <p id="tweetElement"></p>
