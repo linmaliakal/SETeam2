@@ -2,6 +2,11 @@
 Continuation of the Twitter Messaging Engine with new features and a better user interface and experience! <br/>
 ## Product Scope
 This web application was developed in the scope of deciphering the components of a tweet based on the specifications outlined on Twitter. It was also developed to have provide the user with an increased amount of interactive options.
+## How to Use
+In the application, we implemented a tweet parser where users can visually interact with tweets. <br/>
+To use the web app, users first navigate to either an existing tweet look-up or a manual entry page. <br/>
+In the look-up page, users can enter a search term that returns the most recent tweets including that search term, and provides the first word of the tweet with the highest frequency of the search term as an interactive object. Within our project, we had trouble properly integrating the back end look-up which was written in scala with the front end, so we wired the web app to return results for the search term "hello."<br/>
+In the manual entry page, users can enter tweets that they wish to interact with in the canvas area by entering the tweet in the above text area, and then clicking the "Add to Jello!" button to turn the text into a moveable object in the canvas.
 ## References
 * [Bounce - CSS](http://bouncejs.com/) <br/>
 * [Bouncing Jelly](https://codepen.io/dissimulate/pen/dJgMaO) <br/>
